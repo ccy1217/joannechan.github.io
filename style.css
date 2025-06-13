@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #f1f7d7;
+  --bg-color: #f1f7d7;   /* Light mode background */
   --text-color: #000000;
 }
 
@@ -13,8 +13,8 @@ body {
 }
 
 .dark-mode {
-  --bg-color: #444d1d;
-  --text-color: #f5f5f5;
+  --bg-color: #444d1d;   /* Dark mode background */
+  --text-color: #ffffff;
 }
 
 .container {
