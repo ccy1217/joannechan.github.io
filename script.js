@@ -20,7 +20,3 @@ toggleBtn.addEventListener('click', () => {
   updateIcon(isDark);
 });
 
-const customCursor = document.getElementById('custom-cursor');
-document.addEventListener('mousemove', (e) => {
-  customCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
