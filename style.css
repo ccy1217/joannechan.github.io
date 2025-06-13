@@ -62,17 +62,5 @@ button img {
   height: 24px;
 }
 
-html, body, * {
-  cursor: none !important;
-}
-
-#custom-cursor {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  pointer-events: none;
-  z-index: 10000;
-  transition: transform 0.05s linear;
-}
 
 
