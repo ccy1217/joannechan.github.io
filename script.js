@@ -1,12 +1,22 @@
 const toggleBtn = document.getElementById('toggle-mode');
+const modeIcon = document.getElementById('mode-icon');
 
-// Optional: Load user's preference
-if (localStorage.getItem('darkMode') === 'true') {
+function updateIcon(isDark) {
+  modeIcon.src = isDark ? 'icons/sun.svg' : 'icons/moon.svg';
+  modeIcon.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+}
+
+const userPrefersDark = localStorage.getItem('darkMode') === 'true';
+if (userPrefersDark) {
   document.body.classList.add('dark-mode');
+  updateIcon(true);
+} else {
+  updateIcon(false);
 }
 
 toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
+  const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark);
+  updateIcon(isDark);
 });
+
