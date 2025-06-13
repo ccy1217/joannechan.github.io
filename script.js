@@ -3,20 +3,21 @@ const modeIcon = document.getElementById('mode-icon');
 
 function updateIcon(isDark) {
   modeIcon.src = isDark ? 'icons/sun.svg' : 'icons/moon.svg';
-  modeIcon.alt = isDark a? 'Switch to light mode' : 'Switch to dark mode';
+  modeIcon.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
 }
 
-const userPrefersDark = localStorage.getItem('darkMode') === 'true';
-if (userPrefersDark) {
+// Check saved mode
+const savedMode = localStorage.getItem('darkMode') === 'true';
+if (savedMode) {
   document.body.classList.add('dark-mode');
   updateIcon(true);
 } else {
   updateIcon(false);
 }
 
+// Toggle dark mode
 toggleBtn.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
 });
-
