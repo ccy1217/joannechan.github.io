@@ -3,7 +3,7 @@ const modeIcon = document.getElementById('mode-icon');
 
 function updateIcon(isDark) {
   modeIcon.src = isDark ? 'icons/sun.svg' : 'icons/moon.svg';
-  modeIcon.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  modeIcon.alt = isDark a? 'Switch to light mode' : 'Switch to dark mode';
 }
 
 const userPrefersDark = localStorage.getItem('darkMode') === 'true';
@@ -20,3 +20,7 @@ toggleBtn.addEventListener('click', () => {
   updateIcon(isDark);
 });
 
+const customCursor = document.getElementById('custom-cursor');
+document.addEventListener('mousemove', (e) => {
+  customCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
