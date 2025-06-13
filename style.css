@@ -39,3 +39,25 @@ button:hover {
 button img {
   display: block;
 }
+
+#toggle-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#toggle-mode:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#toggle-mode img {
+  width: 24px;
+  height: 24px;
+}
