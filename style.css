@@ -1,6 +1,4 @@
-* {
-  cursor: url('icons/animate-chicken.gif'), auto;
-}
+
 /* Default Light Theme */
 body {
   background-color: #f1f7d7;
@@ -8,6 +6,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  cursor: auto; /* Default cursor */
+}
+
+/* When hovering over the body, change cursor to the custom GIF */
+body:hover {
+  cursor: url('icons/animate-chicken.gif'), auto; /* Custom GIF */
 }
 
 /* Dark Mode */
