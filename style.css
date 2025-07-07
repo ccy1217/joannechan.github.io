@@ -51,6 +51,24 @@ body.dark-mode {
   font-style: normal;
 }
 
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5); /* light ripple, can be customized */
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  z-index: 9999;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+
 .video-section {
   text-align: center;
   margin-top: 40px;
