@@ -70,9 +70,17 @@ body.dark-mode {
 }
 
 #custom-cursor {
-  image-rendering: auto;
-  mix-blend-mode: normal; /* optional */
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 9999;
+  visibility: hidden;
+  border: none;
+  outline: none;
+  background: none;
 }
+
 
 
 
