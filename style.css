@@ -75,8 +75,6 @@ body.dark-mode {
   height: 32px;
   pointer-events: none;
   z-index: 9999;
-  background-image: url('icons/animate-chicken.gif');  /* Your custom GIF as background */
-  background-size: cover;  /* Ensure the image fills the area */
 }
 
 
