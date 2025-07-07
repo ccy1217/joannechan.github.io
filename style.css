@@ -68,6 +68,15 @@ body.dark-mode {
   }
 }
 
+#custom-cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
 
 .video-section {
   text-align: center;
