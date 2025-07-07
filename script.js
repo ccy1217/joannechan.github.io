@@ -41,8 +41,8 @@ const cursor = document.getElementById('custom-cursor');
 
 // Show the custom cursor on mouse move
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.pageX + 'px';
-  cursor.style.top = e.pageY + 'px';
+  cursor.style.left = (e.pageX - 16) + 'px';
+  cursor.style.top = (e.pageY - 16) + 'px';
   cursor.style.visibility = 'visible';  // Make cursor visible when moving
 });
 
