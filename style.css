@@ -76,7 +76,7 @@ body.dark-mode {
   height: 32px;
   pointer-events: none;
   z-index: 9999;
-  visibility: hidden;
+   visibility: visible;
   border: none;
   outline: none;
   background: none;
