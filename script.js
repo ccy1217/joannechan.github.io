@@ -21,7 +21,7 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
 });
-
+// water ripple mouse effect when clicking
 document.addEventListener('click', function (e) {
   const ripple = document.createElement('div');
   ripple.className = 'ripple';
@@ -35,4 +35,10 @@ document.addEventListener('click', function (e) {
   setTimeout(() => {
     ripple.remove();
   }, 600); // same as animation duration
+});
+
+const cursor = document.getElementById('custom-cursor');
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
 });
