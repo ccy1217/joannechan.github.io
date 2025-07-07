@@ -1,13 +1,13 @@
 const toggleBtn = document.getElementById('toggle-mode');
 const modeIcon = document.getElementById('mode-icon');
-// const cursor = document.getElementById('custom-cursor');
+const cursor = document.getElementById('custom-cursor');
 
-// // Cursor follows mouse
-// document.addEventListener('mousemove', (e) => {
-//   cursor.style.left = (e.pageX - 16) + 'px';
-//   cursor.style.top = (e.pageY - 16) + 'px';
-//   cursor.style.visibility = 'visible';
-// });
+// Cursor follows mouse
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = (e.pageX - 16) + 'px';
+  cursor.style.top = (e.pageY - 16) + 'px';
+  cursor.style.visibility = 'visible';
+});
 
 // Ripple effect on click
 document.addEventListener('click', function (e) {
