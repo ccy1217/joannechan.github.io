@@ -5,6 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  cursor: url('icons/animate-chicken.gif'), auto;
 }
 
 /* Dark Mode */
