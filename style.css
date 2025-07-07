@@ -10,7 +10,7 @@ body {
 }
 
 /* When hovering over the body, change cursor to the custom GIF */
-body:hover {
+html{
   cursor: url('icons/animate-chicken.gif'), auto; /* Custom GIF */
 }
 
