@@ -21,3 +21,18 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
 });
+
+document.addEventListener('click', function (e) {
+  const ripple = document.createElement('div');
+  ripple.className = 'ripple';
+
+  ripple.style.left = `${e.pageX - 10}px`;
+  ripple.style.top = `${e.pageY - 10}px`;
+  ripple.style.width = ripple.style.height = '20px'; // initial size
+
+  document.body.appendChild(ripple);
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 600); // same as animation duration
+});
