@@ -76,6 +76,10 @@ body.dark-mode {
   pointer-events: none;
   z-index: 9999;
   visibility: hidden;
+  background-image: url('icons/animate-chicken.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent; /* <--- this line ensures transparency */
 }
 
 
