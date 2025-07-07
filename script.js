@@ -38,8 +38,12 @@ document.addEventListener('click', function (e) {
 });
 
 const cursor = document.getElementById('custom-cursor');
+
+// Show the custom cursor on mouse move
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.pageX + 'px';
   cursor.style.top = e.pageY + 'px';
-});    
+  cursor.style.visibility = 'visible';  // Make cursor visible when moving
+});
+
 
