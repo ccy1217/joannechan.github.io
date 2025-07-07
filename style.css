@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  cursor: url('icons/chicken-click.png'); /* Hide the default cursor */
+  cursor: url('icons/chicken-click.png'), auto; /* Hide the default cursor */
 }
 
 /* Dark Mode */
