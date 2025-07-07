@@ -1,4 +1,3 @@
-
 /* Default Light Theme */
 body {
   background-color: #f1f7d7;
@@ -9,8 +8,13 @@ body {
   cursor: auto; /* Default cursor */
 }
 
-/* When hovering over the body, change cursor to the custom GIF */
-html{
+/* Apply the custom cursor to the entire HTML document */
+html {
+  cursor: auto; /* Default cursor */
+}
+
+/* Change cursor to custom GIF when hovering over the body */
+body:hover {
   cursor: url('icons/animate-chicken.gif'), auto; /* Custom GIF */
 }
 
@@ -44,6 +48,7 @@ body.dark-mode {
 
 #toggle-mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  cursor: url('icons/animate-chicken.gif'), auto; /* Custom cursor for button */
 }
 
 #toggle-mode img {
@@ -74,7 +79,6 @@ body.dark-mode {
     opacity: 0;
   }
 }
-
 
 .video-section {
   text-align: center;
