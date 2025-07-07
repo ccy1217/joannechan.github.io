@@ -44,3 +44,19 @@ body.dark-mode {
   height: 24px;
   display: block;
 }
+.video-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.video-section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: inherit;
+}
+
+video {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
