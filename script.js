@@ -38,7 +38,16 @@ document.addEventListener('click', function (e) {
 });
 
 const cursor = document.getElementById('custom-cursor');
+
+// Show and move the cursor
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.pageX + 'px';
-  cursor.style.top = e.pageY + 'px';
+  cursor.style.visibility = 'visible';  // Make the cursor visible when mouse moves
+  cursor.style.left = e.pageX - cursor.offsetWidth / 2 + 'px';  // Center cursor on mouse pointer
+  cursor.style.top = e.pageY - cursor.offsetHeight / 2 + 'px';
 });
+
+// Hide the custom cursor when mouse leaves the page (optional)
+document.addEventListener('mouseleave', () => {
+  cursor.style.visibility = 'hidden';  // Hide the cursor when outside the window
+});
+
