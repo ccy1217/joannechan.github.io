@@ -69,6 +69,7 @@ body.dark-mode {
   }
 }
 
+/* Custom cursor image */
 #custom-cursor {
   position: fixed;
   width: 32px;
@@ -76,11 +77,11 @@ body.dark-mode {
   pointer-events: none;
   z-index: 9999;
   visibility: hidden;
-  border: none;         /* Make sure no border is applied */
-  outline: none;        /* Remove any focus outlines */
-  background: none;     /* No background color */
+  border: none;
+  outline: none;
+  background: none;
+  user-select: none;
 }
-
 
 
 
