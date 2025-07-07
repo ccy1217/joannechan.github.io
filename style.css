@@ -70,11 +70,10 @@ body.dark-mode {
 
 #custom-cursor {
   position: fixed;
-  width: 32px;  /* Width of the custom cursor */
-  height: 32px;  /* Height of the custom cursor */
-  pointer-events: none;  /* Ensures the cursor doesn't interfere with clicks */
-  z-index: 9999;  /* Keeps the cursor on top */
-  visibility: hidden;  /* Initially hide the cursor */
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 9999;
   background-image: url('icons/animate-chicken.gif');  /* Your custom GIF as background */
   background-size: cover;  /* Ensure the image fills the area */
 }
