@@ -69,7 +69,7 @@ body.dark-mode {
   }
 }
 
-#custom-cursor {
+ #custom-cursor {
   position: fixed;
   width: 32px;
   height: 32px;
@@ -78,10 +78,10 @@ body.dark-mode {
   visibility: hidden;
   border: none;
   outline: none;
-  background: none;
+  background: transparent;
+  background-image: url('icons/animate-chicken.gif');  /* Your custom GIF as background */
+  background-size: cover;  /* Ensure the image fills the area */
 }
-
-
 
 
 .video-section {
