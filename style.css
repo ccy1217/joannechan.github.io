@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  cursor: none; /* Hide the default cursor */
+  cursor: url('icons/chicken-click.png'); /* Hide the default cursor */
 }
 
 /* Dark Mode */
@@ -69,24 +69,6 @@ body.dark-mode {
   }
 }
 
-html {
-  cursor: url('icons/chicken-click.png'), auto;
-}
-
-
-/*  #custom-cursor {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  z-index: 9999;
-  visibility: hidden;
-  border: none;
-  outline: none;
-  background: transparent;
-    background-image: url('icons/chicken-click.png');  /* Your custom GIF as background */
-  background-size: cover;  /* Ensure the image fills the area */
-} */
 
 .video-section {
   text-align: center;
