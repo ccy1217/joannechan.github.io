@@ -79,6 +79,7 @@ body.dark-mode {
   border: none;
   outline: none;
   background: transparent;
+    background-image: url('icons/chicken-click.png');  /* Your custom GIF as background */
   background-size: cover;  /* Ensure the image fills the area */
 }
 
