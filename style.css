@@ -5,9 +5,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  cursor: url('icons/chicken-click.png'), auto; /* Hide the default cursor */
 }
-
+html {
+    cursor: url('chicken-click.png'), default;
+}
 /* Dark Mode */
 body.dark-mode {
   background-color: #444d1d;
