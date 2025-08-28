@@ -36,4 +36,4 @@ toggleBtn.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
-});
+}); 
