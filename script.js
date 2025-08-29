@@ -36,4 +36,48 @@ toggleBtn.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
-}); 
+});
+
+
+//gallery container
+document.querySelectorAll('.gallery-container').forEach(gallery => {
+  let slides = gallery.querySelectorAll('.slide');
+  let current = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+    // Update active pagination
+    gallery.querySelectorAll('.pagination a').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  // Show first slide
+  showSlide(current);
+
+  // Next/Prev buttons
+  gallery.querySelectorAll('.next').forEach(nextBtn => {
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+  });
+
+  gallery.querySelectorAll('.prev').forEach(prevBtn => {
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+  });
+
+  // Pagination dots
+  gallery.querySelectorAll('.pagination a').forEach((dot, index) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      current = index;
+      showSlide(current);
+    });
+  });
+});
