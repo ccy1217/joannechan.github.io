@@ -51,17 +51,20 @@ body.dark-mode {
 }
 
 /* Dark/light mode toggle button */
+/* Dark/light mode toggle button - unified with menu button */
 #toggle-mode {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.2); /* same as menu button */
   border: none;
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 24px; /* optional, match menu button if needed */
+  color: #fff;      /* ensure icon/text is visible */
   transition: background 0.3s;
 }
 
 #toggle-mode:hover {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.4); /* same hover as menu button */
 }
 
 #toggle-mode img {
