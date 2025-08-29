@@ -1,13 +1,5 @@
 const toggleBtn = document.getElementById('toggle-mode');
 const modeIcon = document.getElementById('mode-icon');
-// const cursor = document.getElementById('custom-cursor');
-
-// // Cursor follows mouse
-// document.addEventListener('mousemove', (e) => {
-//   cursor.style.left = (e.pageX - 16) + 'px';
-//   cursor.style.top = (e.pageY - 16) + 'px';
-//   cursor.style.visibility = 'visible';
-// });
 
 // Ripple effect on click
 document.addEventListener('click', function (e) {
@@ -36,6 +28,15 @@ toggleBtn.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark);
   updateIcon(isDark);
+});
+//menu
+const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+const mainContent = document.querySelector(".main-content");
+
+menuToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("hidden");
+  mainContent.classList.toggle("sidebar-hidden");
 });
 
 
