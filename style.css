@@ -1,21 +1,22 @@
-   /* Default Light Theme */
+/* 1. Default Light Theme */
 body {
   background-color: #DCDFBF;
   color: #222;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px 100px;
 }
 html {
-    cursor: url('chicken-click.png'), default;
+  cursor: url('chicken-click.png'), default;
 }
-/* Dark Mode */
+
+/* Dark Theme */
 body.dark-mode {
   background-color: #444d1d;
   color: #f1f7d7;
 }
 
-/* Container Styling */
+/* 2. Container Styling */
 .container {
   max-width: 600px;
   margin: 100px auto;
@@ -23,22 +24,44 @@ body.dark-mode {
   padding: 20px;
 }
 
-/* Toggle Button */
-#toggle-mode {
+/* 3. Toggle & Menu Button Container */
+.top-controls {
   position: fixed;
   top: 20px;
-  right: 20px;
-  background: none;
+  left: 20px;
+  display: flex;
+  gap: 10px; /* space between buttons */
+  z-index: 1001;
+}
+
+/* Menu toggle button styling */
+#menu-toggle {
+  background: rgba(0,0,0,0.2);
   border: none;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-  z-index: 1000;
+  font-size: 24px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+#menu-toggle:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+/* Dark/light mode toggle button */
+#toggle-mode {
+  background: rgba(0,0,0,0.2);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 #toggle-mode:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0,0,0,0.4);
 }
 
 #toggle-mode img {
@@ -47,16 +70,18 @@ body.dark-mode {
   display: block;
 }
 
+/* Bungee Shade font */
 .bungee-shade-regular {
   font-family: "Bungee Shade", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+/* Ripple effect */
 .ripple {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5); /* light ripple, can be customized */
+  background: rgba(255, 255, 255, 0.5);
   pointer-events: none;
   transform: scale(0);
   animation: ripple-animation 0.6s ease-out;
@@ -70,6 +95,67 @@ body.dark-mode {
   }
 }
 
+/* 4. Vertical Sidebar Menu */
+.sidebar {
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers menu vertically */
+  align-items: flex-start; /* keep links aligned to left */
+  gap: 20px;
+  padding-left: 20px; /* space from the edge */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode for sidebar */
+body.dark-mode .sidebar {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Hidden sidebar */
+.sidebar.hidden {
+  transform: translateX(-220px); /* slide sidebar out of view */
+}
+
+/* Main content shifted to the right of sidebar */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Main content adjusts when sidebar is hidden */
+.main-content.sidebar-hidden {
+  margin-left: 0; /* full width */
+}
+
+/* adjust video size inside main content */
+.main-content iframe {
+  width: 200px;
+  height: 356px;
+  border-radius: 10px;
+}
+
+/* 5. video section list */
 .video-section {
   display: flex;
   flex-direction: column;
@@ -80,14 +166,12 @@ body.dark-mode {
   margin-right: auto;
 }
 
-/* item list*/
+/* item list */
 .video-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
-  /* Dark transparent shading */
   background-color: rgba(0, 0, 0, 0.3);
   padding: 20px;
   border-radius: 12px;
@@ -109,20 +193,20 @@ body.dark-mode .video-item {
 }
 
 .video-item iframe {
-  flex: 0.8; /* adjust size ratio for smaller video */
+  flex: 0.8;
   max-width: 100%;
   border-radius: 10px;
 }
 
 .shorts-video {
-  width: 200px;   /* smaller width */
-  height: 356px;  /* keeps 9:16 ratio */
+  width: 200px;
+  height: 356px;
   border-radius: 10px;
 }
 
-/* Special larger container for slideshow */
+/* 6.gallery part - special larger container for slideshow */
 .gallery-container {
-  max-width: 1000px;   /* much bigger */
+  max-width: 1000px;
   margin: 50px auto;
   text-align: center;
   padding: 20px;
@@ -132,30 +216,11 @@ body.dark-mode .video-item {
 .slideshow {
   position: relative;
   width: 100%;
-  max-width: 900px;   /* was 600px, now bigger */
+  max-width: 900px;
   margin: 20px auto;
   overflow: hidden;
-  border-radius: 16px; /* slightly bigger corners */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-
-
-.slide img {
-  width: 100%;
-  height: auto;       /* keep aspect ratio */
   border-radius: 16px;
-}
-
-
-.slide {
-  display: none;
-  position: relative;
-  text-align: center;
-}
-
-.slide:target {
-  display: block;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 /* Arrows */
@@ -164,52 +229,56 @@ body.dark-mode .video-item {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 40px;      /* bigger arrow */
+  font-size: 40px;
   font-weight: bold;
-  color: black;         /* plain black arrow */
+  color: black;
   text-decoration: none;
-  background: none;     /* remove oval */
-  padding: 0;           /* remove extra space */
-  border-radius: 0;     /* remove rounding */
-}
-.slide a.prev {
-  left: 10px;
-}
-
-.slide a.next {
-  right: 10px;
+  background: rgba(255,255,255,0.6);
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
-/* Pagination */
+.slide a.prev:hover,
+.slide a.next:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.slide a.prev { left: 15px; }
+.slide a.next { right: 15px; }
+
+/* Pagination below slideshow */
 .pagination {
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .pagination a {
   text-decoration: none;
-  margin: 0 5px;
 }
 
 .pagination span {
   display: inline-block;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
   border-radius: 50%;
   background: #ddd;
   color: #333;
   font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.pagination a:hover span {
-  background: #666;
-  color: #fff;
-}
-
+.pagination a:hover span,
 .pagination a.active span {
   background: #666;
   color: #fff;
-} 
+}
