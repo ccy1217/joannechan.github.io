@@ -94,42 +94,64 @@ document.querySelectorAll('.gallery-container').forEach(gallery => {
 //--------second interface for zoom in and out for the big image 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
-const mapImg = document.getElementById("map1");
-const closeBtn = document.querySelector(".close");
-const zoomIn = document.getElementById("zoom-in");
-const zoomOut = document.getElementById("zoom-out");
+const zoomInBtn = document.getElementById("zoom-in");
+const zoomOutBtn = document.getElementById("zoom-out");
+const closeBtn = document.querySelector(".lightbox .close");
+const prevBtn = document.querySelector(".lightbox .prev");
+const nextBtn = document.querySelector(".lightbox .next");
 
-let scale = 1;
+let currentScale = 1;
+let currentIndex = 0;
+let galleryImages = [];
 
-// Open lightbox
-mapImg.onclick = () => {
-  lightbox.style.display = "block";
-  lightboxImg.src = mapImg.src;
-  scale = 1;
-  lightboxImg.style.transform = `scale(${scale})`;
-};
+// Open lightbox and initialize gallery
+document.querySelectorAll(".zoomable").forEach((img, index) => {
+  img.addEventListener("click", () => {
+    galleryImages = Array.from(document.querySelectorAll(".zoomable"));
+    currentIndex = index;
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightbox.style.display = "flex";
+  currentScale = 1;
+  updateLightboxImage();
+}
+
+function updateLightboxImage() {
+  lightboxImg.src = galleryImages[currentIndex].src;
+  lightboxImg.style.transform = `scale(${currentScale})`;
+}
+
+// Zoom controls
+zoomInBtn.addEventListener("click", () => {
+  currentScale += 0.2;
+  lightboxImg.style.transform = `scale(${currentScale})`;
+});
+
+zoomOutBtn.addEventListener("click", () => {
+  if (currentScale > 0.4) currentScale -= 0.2;
+  lightboxImg.style.transform = `scale(${currentScale})`;
+});
+
+// Navigation
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  currentScale = 1;
+  updateLightboxImage();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  currentScale = 1;
+  updateLightboxImage();
+});
 
 // Close lightbox
-closeBtn.onclick = () => {
+closeBtn.addEventListener("click", () => {
   lightbox.style.display = "none";
-};
+});
 
-// Zoom in
-zoomIn.onclick = () => {
-  scale += 0.2;
-  lightboxImg.style.transform = `scale(${scale})`;
-};
 
-// Zoom out
-zoomOut.onclick = () => {
-  scale -= 0.2;
-  if (scale < 0.2) scale = 0.2; // minimum size
-  lightboxImg.style.transform = `scale(${scale})`;
-};
 
-// Close lightbox if clicking outside the image
-lightbox.onclick = (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
-  }
-};
