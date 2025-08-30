@@ -1,174 +1,192 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UX Design for Smart Fridge</title>
-<link rel="icon" href="icons/chicken.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/chicken.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
      <!-- Top-left control buttons -->
-         <div class="top-controls">
-             <button id="menu-toggle">☰</button>
-             <button id="toggle-mode">
-             <img id="mode-icon" src="icons/moon.svg" alt="Toggle theme" />
-             </button>
-         </div>
-
-          <!-- Sidebar -->
-          <div class="sidebar">
-            <a href="index.html">Home</a>
-            <a href="#overview">Overview</a>
-            <a href="#wireframes">Wireframes</a>
-
-  	    <!-- Submenu for target group1 -->
-            <div class="menu-item">
-            <button class="submenu-toggle">Target group 1 ▾</button>
-            <div class="submenu">
-            <a href="#persona-1">Persona 1</a>
-            <a href="#journey-map-1">Journey map 1</a>
-            <a href="#slide-1">Storyboard 1</a>
+     <div class="top-controls">
+          <button id="menu-toggle">☰</button>
+          <button id="toggle-mode">
+          <img id="mode-icon" src="icons/moon.svg" alt="Toggle theme" />
+          </button>
+      </div>
+      <!-- Sidebar -->
+      <div class="sidebar">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#wireframes">Wireframes</a>
+  	  <!-- Submenu for target group1 -->
+      <div class="menu-item">
+          <button class="submenu-toggle">Target group 1 ▾</button>
+          <div class="submenu">
+          <a href="#persona-1">Persona 1</a>
+          <a href="#journey-map-1">Journey map 1</a>
+          <a href="#storyboard-1">Storyboard 1</a>
+      </div>
+      </div>
+      <!-- Submenu for target group1 -->
+      <div class="menu-item">
+          <button class="submenu-toggle">Target group 2 ▾</button>
+          <div class="submenu">
+             <a href="#persona-2">Persona 2</a>
+             <a href="#journey-map-2">Journey map 2</a>
+             <a href="#storyboard-2">Storyboard 2</a>
           </div>
-          </div>
-            <!-- Submenu for target group1 -->
-            <div class="menu-item">
-            <button class="submenu-toggle">Target group 2 ▾</button>
-            <div class="submenu">
-            <a href="#pertsona-2">Persona 2</a>
-            <a href="#slide-4">Storyboard 2</a>
-          </div>
-          </div>
-            <a href="#website">Website</a>
-          </div>
+      </div>
+      <a href="#website">Website</a>
+      </div>
 
   <!-- Main content -->
-  <div class="main-content">
-    <section id="overview">
-      <h2>Overview</h2>
-      <p>Details about the project go here.</p>
-      <iframe src="https://www.youtube.com/embed/_UIwaJ7dU84" title="YouTube Shorts" frameborder="0" allowfullscreen></iframe>
-    </section>
+<div class="main-content">
+  <section id="overview">
+    <h2 class="bungee-spice-regular">Overview</h2>
+    <div class="wavy-line"></div>
+      <div class="overview-content">
+        <div class="overview-text">
+          <p>
+            According to Safdie (2024), the problem of food waste has become a widespread issue, 
+            with over 30% of food being lost or wasted annually. We want to find ways to improve trust 
+            in food management systems among consumers, as the current status quo leads to uncertainty 
+            about food freshness and contributes to unnecessary waste. We believe that households and 
+            sustainability-conscious consumers will be interested in our solution if we can effectively 
+            address this issue. We will build a smart fridge system that uses AI to scan and track food 
+            items, notifying users when products are nearing expiration and suggesting ways to use them, 
+            cultivating a more efficient and sustainable approach to food consumption.
+          </p>
+        </div>
+        <div class="overview-image">
+          <img src="icons/food-waste.gif" 
+               alt="Smart Fridge demo animation" 
+               class="food-waste-gif" />
+        </div>
+      </div>
+     <h2>Target user group</h2>
+    <p>Sustainability-conscious consumers, busy households, and individuals interested in reducing food waste and saving on grocery expenses.</p>
+   </section>
 
-    <section id="wireframes">
+   <section id="wireframes">
       <h2>Wireframes</h2>
       <p>Wireframe sketches and low-fidelity designs.</p>
-    </section>
+   </section>
     
-    <section id="persona-1">
-       <h2>Persona 1 - (Restaurant manager)</h2>
+   <section id="persona-1">
+       <h2 class="bungee-spice-regular">Persona 1 - (Restaurant manager)</h2>
+       <div class="wavy-line"></div>
        <div class="persona">
           <img src="persona/persona1-a.png" alt="Persona 1-a" />
           <img src="persona/persona1-b.png" alt="Persona 1-b" />
        </div>
-     </section>
+    </section>
 
-      <section id="journey-map-1">
-        <h2>Journey Map</h2>
-        <img 
-          id="map1" 
-          src="journey-map/map1.png" 
-          alt="map1" 
-          class="thumbnail" />
-      </section>
-      
-      <!-- Lightbox overlay -->
-      <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" />
-        <div class="zoom-controls">
-          <button id="zoom-in">+</button>
-          <button id="zoom-out">-</button>
+    <section id="journey-map-1">
+      <h2>Journey Map</h2>
+      <img id="map1" src="journey-map/map1.png" alt="map1" class="zoomable" />
+    </section>
+  
+    <section id="storyboard-1">
+      <h2>Storyboard 1</h2>
+      <div class="gallery-container slideshow-container">
+        <!-- Slides -->
+        <div class="slide">
+          <img src="storyboard/story1.png" alt="story 1" class="zoomable">
+        </div>
+        <div class="slide">
+          <img src="storyboard/story2.png" alt="story 2" class="zoomable">
+        </div>
+        <div class="slide">
+          <img src="storyboard/story3.png" alt="story 3" class="zoomable">
+        </div>
+    
+        <!-- Optional pagination -->
+        <div class="pagination">
+          <a><span>1</span></a>
+          <a><span>2</span></a>
+          <a><span>3</span></a>
         </div>
       </div>
+    </section>
 
-     <section id="storyboard">
-        <h2>Storyboard</h2>
-        <p>The following styoryboards describe the problem that users are facing and how the new ux design imporve the probkem. </p>
-      
-        <div class="gallery-container">
-          <div class="slideshow">
-            <div id="slide-1" class="slide">
-              <a href="#slide-3" class="prev">&#10094;</a>
-              <a href="#slide-2" class="next">&#10095;</a>
-              <img src="storyboard/story1.png" alt="story 1">
-            </div>
-      
-            <div id="slide-2" class="slide">
-              <a href="#slide-1" class="prev">&#10094;</a>
-              <a href="#slide-3" class="next">&#10095;</a>
-              <img src="storyboard/story2.png" alt="story 2">
-            </div>
-      
-            <div id="slide-3" class="slide">
-              <a href="#slide-2" class="prev">&#10094;</a>
-              <a href="#slide-1" class="next">&#10095;</a>
-              <img src="storyboard/story3.png" alt="story 3">
-            </div>
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div class="zoom-controls">
+        <button id="zoom-in">+</button>
+        <button id="zoom-out">-</button>
+      </div>
+    </div>
+  
+     <section id="persona-2">
+       <h2 class="bungee-spice-regular">Persona 2 - (Businessman)</h2>
+       <div class="wavy-line"></div>
+       <div class="persona">
+          <img src="persona/persona2-a.png" alt="Persona 2-a" />
+          <img src="persona/persona2-b.png" alt="Persona 2-b" />
+       </div>
+     </section>
+     <section id="journey-map-2">
+       <h2>Journey Map 2</h2>
+       <img id="map2" src="journey-map/map2.png" alt="map2" class="zoomable" />
+     </section>
+
+     <section id="storyboard-2">
+       <h2>Storyboard 2</h2>
+       <div class="gallery-container slideshow-container">
+          <!-- Slides -->
+          <div class="slide">
+            <img src="storyboard/story4.png" alt="story 4" class="zoomable">
+          </div>
+          <div class="slide">
+            <img src="storyboard/story5.png" alt="story 5" class="zoomable">
+          </div>
+          <div class="slide">
+            <img src="storyboard/story6.png" alt="story 6" class="zoomable">
           </div>
       
-          <!-- storyboard 1 pagination -->
+          <!-- Optional pagination -->
           <div class="pagination">
-            <a href="#slide-1"><span>1</span></a>
-            <a href="#slide-2"><span>2</span></a>
-            <a href="#slide-3"><span>3</span></a>
+            <a><span>4</span></a>
+            <a><span>5</span></a>
+            <a><span>6</span></a>
           </div>
         </div>
-          <div class="gallery-container">
-          <div class="slideshow">
-            <div id="slide-4" class="slide">
-              <a href="#slide-6" class="prev">&#10094;</a>
-              <a href="#slide-5" class="next">&#10095;</a>
-              <img src="storyboard/story4.png" alt="story 3">
-            </div>
-      
-            <div id="slide-5" class="slide">
-              <a href="#slide-4" class="prev">&#10094;</a>
-              <a href="#slide-6" class="next">&#10095;</a>
-              <img src="storyboard/story5.png" alt="story 4">
-            </div>
-      
-            <div id="slide-6" class="slide">
-              <a href="#slide-5" class="prev">&#10094;</a>
-              <a href="#slide-4" class="next">&#10095;</a>
-              <img src="storyboard/story6.png" alt="story 5">
-            </div>
-          </div>
-          <!-- storyboard 2 pagination -->
-          <div class="pagination">
-            <a href="#slide-3"><span>3</span></a>
-            <a href="#slide-4"><span>4</span></a>
-            <a href="#slide-5"><span>5</span></a>
-          </div>
-        </div>
-      </section>
-<section id="website">
-  <h2>Website</h2>
-  <div class="website-content">
-    <div class="website-description">
-      <p>
-        Check out the full Smart Fridge project on WordPress:
-        <a href="https://smartfridge25.wordpress.com/" target="_blank" rel="noopener noreferrer">
-          https://smartfridge25.wordpress.com/
-        </a>
-      </p>
-      <p>
-        This video explains the UX design, features, and storyboard of the Smart Fridge.
-      </p>
-    </div>
-    <div class="website-video">
-      <iframe 
-        src="https://www.youtube.com/embed/8hvcAh_dUuk" 
-        title="Smart Fridge UX Design Video" 
-        frameborder="0" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</section>
+    </section>
 
-    </div>
+    <section id="website">
+      <h2 class="bungee-spice-regular">Website</h2>
+      <div class="website-content">
+      <div class="wavy-line"></div>
+        <div class="website-description">
+          <p>
+            Check out the full Smart Fridge project on WordPress:
+            <a href="https://smartfridge25.wordpress.com/" target="_blank" rel="noopener noreferrer">
+              https://smartfridge25.wordpress.com/
+            </a>
+          </p>
+          <p>The main page directs users to the first and second generation of our fridge product, which is our first draft and the final design. The top navigation directs      
+      users to the Smart Fridge App user guide and Smart Monitor user guide.</p>
+          <p>The redirected pages illustrate the functionalities, specifications of each generation. Including a button to place an order, to mimic the real shop website.</p>
+        </div>
+        <div class="website-video">
+          <iframe 
+            src="https://www.youtube.com/embed/8hvcAh_dUuk" 
+            title="Smart Fridge UX Design Video" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
-
