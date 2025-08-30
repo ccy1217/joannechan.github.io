@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UX Design for Smart Fridge</title>
+<link rel="icon" href="icons/chicken.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,7 +21,24 @@
             <a href="index.html">Home</a>
             <a href="#overview">Overview</a>
             <a href="#wireframes">Wireframes</a>
-            <a href="#prototypes">Prototypes</a>
+
+  	    <!-- Submenu for target group1 -->
+            <div class="menu-item">
+            <button class="submenu-toggle">Target group 1 ▾</button>
+            <div class="submenu">
+            <a href="#persona-1">Persona 1</a>
+            <a href="#journey-map-1">Journey map 1</a>
+            <a href="#slide-1">Storyboard 1</a>
+          </div>
+          </div>
+            <!-- Submenu for target group1 -->
+            <div class="menu-item">
+            <button class="submenu-toggle">Target group 2 ▾</button>
+            <div class="submenu">
+            <a href="#pertsona-2">Persona 2</a>
+            <a href="#slide-4">Storyboard 2</a>
+          </div>
+          </div>
             <a href="#website">Website</a>
           </div>
 
@@ -36,8 +54,35 @@
       <h2>Wireframes</h2>
       <p>Wireframe sketches and low-fidelity designs.</p>
     </section>
+    
+    <section id="persona-1">
+       <h2>Persona 1 - (Restaurant manager)</h2>
+       <div class="persona">
+          <img src="persona/persona1-a.png" alt="Persona 1-a" />
+          <img src="persona/persona1-b.png" alt="Persona 1-b" />
+       </div>
+     </section>
 
-      <section id="prototypes">
+      <section id="journey-map-1">
+        <h2>Journey Map</h2>
+        <img 
+          id="map1" 
+          src="journey-map/map1.png" 
+          alt="map1" 
+          class="thumbnail" />
+      </section>
+      
+      <!-- Lightbox overlay -->
+      <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+        <div class="zoom-controls">
+          <button id="zoom-in">+</button>
+          <button id="zoom-out">-</button>
+        </div>
+      </div>
+
+     <section id="storyboard">
         <h2>Storyboard</h2>
         <p>The following styoryboards describe the problem that users are facing and how the new ux design imporve the probkem. </p>
       
@@ -97,14 +142,31 @@
           </div>
         </div>
       </section>
-      <section id="website">
-        <h2>Website</h2>
-        <p>
-          <a href="https://smartfridge25.wordpress.com/" target="_blank" rel="noopener noreferrer">
-            https://smartfridge25.wordpress.com/
-          </a>
-        </p>
-      </section>
+<section id="website">
+  <h2>Website</h2>
+  <div class="website-content">
+    <div class="website-description">
+      <p>
+        Check out the full Smart Fridge project on WordPress:
+        <a href="https://smartfridge25.wordpress.com/" target="_blank" rel="noopener noreferrer">
+          https://smartfridge25.wordpress.com/
+        </a>
+      </p>
+      <p>
+        This video explains the UX design, features, and storyboard of the Smart Fridge.
+      </p>
+    </div>
+    <div class="website-video">
+      <iframe 
+        src="https://www.youtube.com/embed/8hvcAh_dUuk" 
+        title="Smart Fridge UX Design Video" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
     </div>
     <script src="script.js"></script>
   </body>
