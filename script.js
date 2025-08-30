@@ -39,6 +39,14 @@ menuToggle.addEventListener("click", () => {
   mainContent.classList.toggle("sidebar-hidden");
 });
 
+// toggle submenu
+document.querySelectorAll('.submenu-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const submenu = button.nextElementSibling;
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
+
 
 //gallery container
 document.querySelectorAll('.gallery-container').forEach(gallery => {
@@ -82,3 +90,46 @@ document.querySelectorAll('.gallery-container').forEach(gallery => {
     });
   });
 });
+
+//--------second interface for zoom in and out for the big image 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const mapImg = document.getElementById("map1");
+const closeBtn = document.querySelector(".close");
+const zoomIn = document.getElementById("zoom-in");
+const zoomOut = document.getElementById("zoom-out");
+
+let scale = 1;
+
+// Open lightbox
+mapImg.onclick = () => {
+  lightbox.style.display = "block";
+  lightboxImg.src = mapImg.src;
+  scale = 1;
+  lightboxImg.style.transform = `scale(${scale})`;
+};
+
+// Close lightbox
+closeBtn.onclick = () => {
+  lightbox.style.display = "none";
+};
+
+// Zoom in
+zoomIn.onclick = () => {
+  scale += 0.2;
+  lightboxImg.style.transform = `scale(${scale})`;
+};
+
+// Zoom out
+zoomOut.onclick = () => {
+  scale -= 0.2;
+  if (scale < 0.2) scale = 0.2; // minimum size
+  lightboxImg.style.transform = `scale(${scale})`;
+};
+
+// Close lightbox if clicking outside the image
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+};
