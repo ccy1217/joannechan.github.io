@@ -299,7 +299,7 @@ body.dark-mode .video-item {
 /* 7. For big photo, allow to zoom */
 /* ================= Gallery Container ================= */
 .gallery-container {
-  max-width: 1000px;
+  max-width: 700px;
   margin: 50px auto;
   text-align: center;
   padding: 20px;
@@ -392,21 +392,31 @@ body.dark-mode .video-item {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;/* hide overflow while dragging */
+
 }
 
-.lightbox-content img {
+.lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  border-radius: 10px;
-  pointer-events: none; /* let clicks go through the image */
+  cursor: grab;        /* show draggable hand */
+  position: relative;
 }
+.lightbox-content:active {
+  cursor: grabbing;
+}
+
 
 /* ================= Zoom Controls ================= */
 /* Zoom controls should be clickable and above the image */
 .zoom-controls {
-  position: relative; /* ensures proper stacking */
-  z-index: 1001;      /* higher than the image */
-  margin-top: 10px;
+  position: absolute;   /* take out of normal flow */
+  bottom: 100px;        /* lift them up from bottom */
+  left: 50%;
+  transform: translateX(-50%); /* center horizontally */
+  z-index: 1002;        /* above image */
+  display: flex;
+  gap: 10px;
 }
 
 .zoom-controls button {
@@ -478,33 +488,107 @@ body.dark-mode .video-item {
 
 
 /* 9. Two-column layout for website section */
-#website .website-content {
+.website-content {
   display: flex;
   flex-wrap: wrap; /* allows stacking on small screens */
   gap: 20px;
   align-items: flex-start;
 }
 
-/* Description on the left */
-#website .website-description {
-  flex: 1;          /* takes available space */
-  min-width: 250px; /* prevents it from being too narrow */
+.website-description {
+  flex: 1;          
+  min-width: 250px; 
 }
 
-/* Video on the right */
-#website .website-video {
+.website-video {
   flex: 1;
   min-width: 300px;
 }
 
-#website iframe {
+.website-video iframe {
   width: 100%;
   height: 100%;
-  aspect-ratio: 16/9; /* maintains 16:9 ratio */
+  aspect-ratio: 16/9;
   border-radius: 10px;
 }
 
-/*9. wavy line*/
+/* 9. Two-column layout for text and images */
+.image-text-2-content {
+  display: flex;            /* makes text and image side by side */
+  flex-wrap: wrap;          /* allows stacking on small screens */
+  gap: 20px;                /* space between text and image */
+  align-items: center;      /* vertically center image with text */
+  margin-top: 20px;
+}
+
+.image-text-2-text {
+  flex: 1;                  /* text takes up available space */
+  min-width: 250px;         
+}
+
+.image-text-2-text li {
+  margin-bottom: 12px; /* space between list items */
+  line-height: 1.5;    /* optional: makes text more readable */
+}
+
+.image-text-2-image {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  height: 300px;            /* fixed container height */
+  overflow: auto;            /* scroll if image is too tall */
+  border: 1px solid transparent; /* invisible border */
+  display: flex;
+  justify-content: center;   /* center image horizontally */
+  align-items: flex-start;   /* align image to top */
+}
+
+.image-text-2-image img {
+  max-width: 100%;
+  height: auto;             /* maintain aspect ratio */
+  border-radius: 10px;
+}
+
+/*10. left- text, right -normal size image*/
+.normal-half-img-container {
+  width: 100%;             
+  max-width: 600px;        
+  height: 400px;           /* fixed height container */
+  overflow: hidden;        /* hide scrollbars */
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  border: 2px solid transparent; /* optional transparent border */
+  margin: 20px 0;       
+}
+
+.normal-half-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;     /* scale image to fit container without cropping */
+}
+
+/* 11. left and right side document can scroll*/
+.file-box {
+  flex: 1;
+  min-width: 300px;
+  max-height: 500px;
+  border: 2px solid #ddd; 
+  border-radius: 8px;
+  margin: 20px 0;
+  overflow: hidden; /* prevent double scrollbars */
+}
+
+.file-box iframe {
+  width: 100%;
+  height: 500px; /* same as container */
+  border: none;
+}
+
+
+
+
+/* 12. wavy line*/
 .wavy-line {
       position: relative;
       width: 100%;
@@ -517,13 +601,45 @@ body.dark-mode .video-item {
       z-index: 1; /* Ensure the wave is below the dropdown */
              }
 
-/*10. Special font type*/
-.bungee-spice-regular {
-  font-family: "Bungee Spice", sans-serif;
-  font-weight: 800;
+/*11. Special font type*/
+.sanchez-regular {
+  font-family: "Sanchez", serif;
+  font-weight: 400;
   font-style: normal;
-  font-size: 35px;
+  text-align: center;
 }
 
+.fredericka-the-great-regular-title {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 500; /* bold */
+  font-style: normal;
+  font-size: 65px;
+
+  /* Gradient text */
+  background: linear-gradient(90deg, #ffbf00, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ text-align: center;
+}
+
+
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  color:#e86100; /* this makes the text orange */
+}
+
+/*13. website font color*/
+/*word press*/
+.orange-link {
+  color: #ff4500;   /* orange color */
+  text-decoration: none; /* optional: remove underline */
+}
+
+.orange-link:hover {
+  text-decoration: underline; /* optional: underline on hover */
+}
 
 
