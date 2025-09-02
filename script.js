@@ -91,7 +91,7 @@ document.querySelectorAll('.gallery-container').forEach(gallery => {
   });
 });
 
-//--------second interface for zoom in and out for the big image 
+//8.--------second interface for zoom in and out for the big image 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const zoomInBtn = document.getElementById("zoom-in");
@@ -104,7 +104,11 @@ let currentScale = 1;
 let currentIndex = 0;
 let galleryImages = [];
 
-// Open lightbox and initialize gallery
+// Track drag offsets
+let isDragging = false;
+let startX, startY, imgX = 0, imgY = 0;
+
+// Open lightbox
 document.querySelectorAll(".zoomable").forEach((img, index) => {
   img.addEventListener("click", () => {
     galleryImages = Array.from(document.querySelectorAll(".zoomable"));
@@ -115,43 +119,72 @@ document.querySelectorAll(".zoomable").forEach((img, index) => {
 
 function openLightbox() {
   lightbox.style.display = "flex";
-  currentScale = 1;
+  resetTransform();
   updateLightboxImage();
 }
 
 function updateLightboxImage() {
   lightboxImg.src = galleryImages[currentIndex].src;
-  lightboxImg.style.transform = `scale(${currentScale})`;
+  applyTransform();
+}
+
+function resetTransform() {
+  currentScale = 1;
+  imgX = 0;
+  imgY = 0;
+  applyTransform();
+}
+
+function applyTransform() {
+  lightboxImg.style.transform = `translate(${imgX}px, ${imgY}px) scale(${currentScale})`;
 }
 
 // Zoom controls
 zoomInBtn.addEventListener("click", () => {
   currentScale += 0.2;
-  lightboxImg.style.transform = `scale(${currentScale})`;
+  applyTransform();
 });
 
 zoomOutBtn.addEventListener("click", () => {
-  if (currentScale > 0.4) currentScale -= 0.2;
-  lightboxImg.style.transform = `scale(${currentScale})`;
+  currentScale = Math.max(0.4, currentScale - 0.2);
+  applyTransform();
 });
 
 // Navigation
 prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  currentScale = 1;
+  resetTransform();
   updateLightboxImage();
 });
 
 nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % galleryImages.length;
-  currentScale = 1;
+  resetTransform();
   updateLightboxImage();
 });
 
-// Close lightbox
+// Close
 closeBtn.addEventListener("click", () => {
   lightbox.style.display = "none";
 });
 
+// Dragging
+lightboxImg.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX - imgX;
+  startY = e.clientY - imgY;
+  lightboxImg.style.cursor = "grabbing";
+});
 
+window.addEventListener("mouseup", () => {
+  isDragging = false;
+  lightboxImg.style.cursor = "grab";
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  imgX = e.clientX - startX;
+  imgY = e.clientY - startY;
+  applyTransform();
+});
 
