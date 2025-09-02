@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UX Design for Smart Fridge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
   <link rel="icon" href="icons/chicken.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -22,32 +24,42 @@
       <div class="sidebar">
           <a href="index.html">Home</a>
           <a href="#overview">Overview</a>
-          <a href="#wireframes">Wireframes</a>
-  	  <!-- Submenu for target group1 -->
-      <div class="menu-item">
-          <button class="submenu-toggle">Target group 1 ▾</button>
-          <div class="submenu">
-          <a href="#persona-1">Persona 1</a>
-          <a href="#journey-map-1">Journey map 1</a>
-          <a href="#storyboard-1">Storyboard 1</a>
-      </div>
-      </div>
-      <!-- Submenu for target group1 -->
-      <div class="menu-item">
-          <button class="submenu-toggle">Target group 2 ▾</button>
-          <div class="submenu">
-             <a href="#persona-2">Persona 2</a>
-             <a href="#journey-map-2">Journey map 2</a>
-             <a href="#storyboard-2">Storyboard 2</a>
+          <a href="#early-idea-sketches">Early idea sketches</a>
+          <div class="menu-item">
+             <button class="submenu-toggle">Scoping work ▾</button>
+             <div class="submenu">
+                 <a href="#survey">Survey</a>
+                 <a href="#word-cloud">Word Cloud</a>
+                 <a href="#histogram">Histogram</a>
+                 <a href="#new-ideas">New ideas</a>
+             </div>
           </div>
-      </div>
-      <a href="#website">Website</a>
+          <div class="menu-item">
+             <button class="submenu-toggle">Target group 1 ▾</button>
+             <div class="submenu">
+                 <a href="#persona-1">Persona 1</a>
+                 <a href="#journey-map-1">Journey map 1</a>
+                 <a href="#storyboard-1">Storyboard 1</a>
+             </div>
+          </div>
+          <div class="menu-item">
+             <button class="submenu-toggle">Target group 2 ▾</button>
+             <div class="submenu">
+                 <a href="#persona-2">Persona 2</a>
+                 <a href="#journey-map-2">Journey map 2</a>
+                 <a href="#storyboard-2">Storyboard 2</a>
+             </div>
+          </div>
+          <a href="#final-design">Final design</a>
+          <a href="#smart-fridge-app-design">Smart Fridge app</a>
+          <a href="#website">Website</a>
       </div>
 
   <!-- Main content -->
 <div class="main-content">
   <section id="overview">
-    <h2 class="bungee-spice-regular">Overview</h2>
+    <h1 class="fredericka-the-great-regular-title">Food Waste Reduction</h1>
+    <h2 class="fredericka-the-great-regular">Overview</h2>
     <div class="wavy-line"></div>
       <div class="overview-content">
         <div class="overview-text">
@@ -69,20 +81,137 @@
         </div>
       </div>
      <h2>Target user group</h2>
-    <p>Sustainability-conscious consumers, busy households, and individuals interested in reducing food waste and saving on grocery expenses.</p>
+     <ul>
+         <li>Sustainability-conscious consumers</li>
+         <li>Busy households</li>
+         <li>Individuals interested in reducing food waste and saving on grocery expenses</li>
+     </ul>
    </section>
 
-   <section id="wireframes">
-      <h2>Wireframes</h2>
-      <p>Wireframe sketches and low-fidelity designs.</p>
+   <section id="early-idea-sketches">
+      <h2 class="fredericka-the-great-regular">Early idea sketches</h2>
+      <div class="wavy-line"></div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         The blueprint sketch of the Smart Fridge, which includes a freezer part and a cooler part.
+         It features a smart monitor, label printer, ice maker, camera, and scanners. The camera and
+         scanner at the front of the fridge detect and scan barcodes. Scanning the label can register
+         food in the inventory system.
+      </li>
+      </div>
+      <div class="normal-half-img-container">
+         <img id="fridge1" src="fridge/fridge1.png" alt="fridge1" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         It features a camera and scanner on every layer of the cabinets for detecting and scanning 
+         food labels. The AI camera detects rotten food in different food cabinets. 
+      </li>
+      <li>
+         The food cabinet will light up if the system detects spoiled or expired food, providing a visual
+         alert to the user about the condition of the items in the respective cabinet.
+      </li>
+      </div>
+      <div class="normal-half-img-container">
+         <img id="fridge2" src="fridge/fridge2.png" alt="fridge2" class="zoomable" />
+      </div>
+      </div>
+
    </section>
-    
+  
+
+   <section id="survey">
+      <h2 class="fredericka-the-great-regular">Survey</h2>
+      <div class="wavy-line"></div>
+      <h2>Different age group interview Q&A</h2>
+      <div class="file-box">
+         <iframe src="others/survey-result.pdf" title="Survey result" class="zoomable"></iframe>
+      </div> 
+      <h2>Focus group interview Q&A</h2>
+      <div class="file-box">
+         <iframe src="others/focus-group-q&a.pdf" title="Focus group Q&A" class="zoomable"></iframe>
+         
+      </div>
+    </section>
+
+   <section id="word-cloud">
+   <h2 class="fredericka-the-great-regular">Word cloud (created by Nvivo)</h2>
+      <div class="wavy-line"></div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <p>
+         This word cloud highlights key terms related to smart fridges and their usefulness in
+         managing food items. It emphasises features like tracking, organization, and
+         suggestions for reducing waste and keeping up with busy lifestyles. Words like
+         helpful, useful, and features suggest a focus on how these fridges can benefit users
+         by improving food management and efficiency.
+      </p>
+      </div>
+      <div class="normal-half-img-container">
+         <img id="word-cloud" src="others/word-cloud.png" alt="word-cloud" class="zoomable" />
+      </div>
+      </div>
+   </section>
+
+   <section id="histogram">
+   <h2 class="fredericka-the-great-regular">Histogram</h2>
+      <div class="wavy-line"></div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <p>Output from the Session:</p>
+      <li>Our goal was to explore whether an AI fridge that tracks food expiration dates
+          and suggests meals would be more useful than a traditional fridge in reducing
+          food waste.</li>
+      <li>The survey compared users who manually track food expiration with those
+          who don’t track expiration dates at all.</li>
+      <li>The hypothesis test showed a p-value of 0.0391, which is below 0.05. This
+          indicates we reject the null hypothesis and accept the alternative hypothesis.
+          There is a significant difference in how the two groups perceive the AI fridge’s
+          usefulness.</li>
+      <li>People who don’t track food expiration dates rated the meal suggestion
+          feature significantly higher than those who manually check. This suggests
+          they struggle more with food management and would benefit from an AI fridge.</li>
+      <li>Users who already manually check expiration dates still saw some benefits in
+          the AI fridge but did not find it as necessary.</li>
+      </div>
+      <div class="normal-half-img-container">
+         <img id="Histogram" src="others/histogram.png" alt="word-cloud" class="zoomable" />
+      </div>
+      </div>
+   </section>
+
+   <section id="new-ideas">
+   <h2 class="fredericka-the-great-regular">New ideas</h2>
+      <div class="wavy-line"></div>
+      <p>Based on these findings, we could consider additional AI fridge features:</p>
+      <li>Smarter Expiration Tracking & Notifications. The fridge will use red-light
+          indicators and mobile push notifications to remind users of expiring or expired
+          food items.</li>
+      <li>Enhanced Barcode & Smart Tag Scanning. Users can scan barcodes via the
+          fridge screen, manually input item details, or use smart tags for tracking
+          non-barcoded items.</li>
+      <li>Reminder Function for Reducing Food Waste. By consistently notifying users
+          about soon-to-expire food, the system helps prevent waste by encouraging
+          timely consumption.</li>
+      <li>Cost-Efficient AI Camera Integration. A single AI camera in an acrylic
+          enclosure will lower production costs while ensuring accurate inventory
+          tracking.</li>
+      <li>Energy-Efficient AI Operation. The camera will only activate on schedule or
+          user demand, reducing unnecessary energy consumption.</li>
+      <li>Expanding Market Reach Beyond High-Income Households . A more
+          affordable AI fridge model will make the technology accessible to
+          budget-conscious consumers.</li>
+   </section>
+
    <section id="persona-1">
-       <h2 class="bungee-spice-regular">Persona 1 - (Restaurant manager)</h2>
+       <h2 class="fredericka-the-great-regular">Persona 1 - (Restaurant manager)</h2>
        <div class="wavy-line"></div>
        <div class="persona">
-          <img src="persona/persona1-a.png" alt="Persona 1-a" />
-          <img src="persona/persona1-b.png" alt="Persona 1-b" />
+          <img src="persona/persona1-a.png" alt="Persona 1-a" class="zoomable" />
+          <img src="persona/persona1-b.png" alt="Persona 1-b" class="zoomable"/>
        </div>
     </section>
 
@@ -127,7 +256,7 @@
     </div>
   
      <section id="persona-2">
-       <h2 class="bungee-spice-regular">Persona 2 - (Businessman)</h2>
+       <h2 class="fredericka-the-great-regular">Persona 2 - (Businessman)</h2>
        <div class="wavy-line"></div>
        <div class="persona">
           <img src="persona/persona2-a.png" alt="Persona 2-a" />
@@ -161,21 +290,148 @@
           </div>
         </div>
     </section>
+    <section id="final-design">
+      <h2 class="fredericka-the-great-regular">Final Design</h2>
+      <div class="wavy-line"></div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         The blueprint sketch of the Smart Fridge includes a freezer part and a cooler part. 
+         It features a smart monitor, label printer, ice maker, camera, and scanners.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge3" src="fridge/fridge3.png" alt="fridge3" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         It shows a more clear blueprint sketch for reference.The camera and scanner at the front
+         of the fridge detect and scan food labels or barcodes. If no label is provided, users can
+         use the smart monitor to print an edible label or utilize the provided NFC tags to label 
+         the food and register it in the inventory system.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge4" src="fridge/fridge4.png" alt="fridge4" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         The internal design features a camera and scanner on top of the fridge for detecting and
+         scanning food labels. The movable AI camera detects rotten food in different food cabinets,
+         and the storage plate lights up when rotten food is detected in the respective cabinet.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge5" src="fridge/fridge5.png" alt="fridge5" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         The cameras and scanners featured on top of the fridge, it scan food labels 
+         using embedded image scanning software. Additionally, the scanners scan the NFC tags on all 
+         the cabinets below. If any stored food item's expiration date has passed, the system will send
+         an alert to notify the user.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge6" src="fridge/fridge6.png" alt="fridge6" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         In addition to scanning food labels, the cameras of the fridge perform image detection. The 
+         image detection system uses advanced AI image recognition to identify rotten food and alert 
+         the user if spoiled items are detected. 
+      </li>
+      <li>
+         It shows the movable AI camera that can move up and down to scan food in different cabinets. 
+         This allows the camera to detect spoiled or rotten food across various sections of the fridge,
+         ensuring thorough monitoring.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge7" src="fridge/fridge7.png" alt="fridge7" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <li>
+         The food plate will light up if the system detects spoiled or expired food, providing a 
+         visual alert to the user about the condition of the items in the respective cabinet.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge8" src="fridge/fridge8.png" alt="fridge8" class="zoomable" />
+      </div>
+      </div>
+      <div class="image-text-2-content">
+      <div class="image-text-2-text">
+      <h2>Extra Features:</h2>
+      <li>
+         Smart Thermometer: Automatically adjust the temperature and humidity to keep food fresh longer
+      </li>
+      <li>
+         AI Energy Save Mode: It reduces the energy usage with AI
+      </li>
+      <li>
+         Smart Tag/ Smart Clip: For food that does not come with a food label or bar code.
+      </li>
+      </div>
+      <div class="image-text-2-image">
+         <img id="fridge9" src="fridge/fridge9.png" alt="fridge9" class="zoomable" />
+      </div>
+      </div>
+    </section>
+
+    <section id="smart-fridge-app-design">
+      <h2 class="fredericka-the-great-regular">Smart Fridge app design</h2>
+      <div class="website-content">
+      <div class="wavy-line"></div>
+        <div class="website-description">
+          <p>This video demonstrates the Smart Fridge’s mobile and onboard interface 
+             functionalities, showcasing how users can seamlessly interact with the system. The
+             design was created in Figma, highlighting both the intuitive layout and user-friendly
+             features of the fridge’s connected ecosystem.</p>
+        </div>
+        <div class="website-video">
+        <iframe 
+           src="https://www.youtube.com/embed/_UIwaJ7dU84" 
+           title="Smart Fridge UX Design Video" 
+           frameborder="0" 
+           allowfullscreen>
+        </iframe>
+        </div>
+      </div>
+    </section>
 
     <section id="website">
-      <h2 class="bungee-spice-regular">Website</h2>
+      <h2 class="fredericka-the-great-regular">Website</h2>
       <div class="website-content">
       <div class="wavy-line"></div>
         <div class="website-description">
           <p>
             Check out the full Smart Fridge project on WordPress:
-            <a href="https://smartfridge25.wordpress.com/" target="_blank" rel="noopener noreferrer">
-              https://smartfridge25.wordpress.com/
+            <a href="https://smartfridge25.wordpress.com/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="orange-link">
+               https://smartfridge25.wordpress.com/
             </a>
           </p>
-          <p>The main page directs users to the first and second generation of our fridge product, which is our first draft and the final design. The top navigation directs      
-      users to the Smart Fridge App user guide and Smart Monitor user guide.</p>
-          <p>The redirected pages illustrate the functionalities, specifications of each generation. Including a button to place an order, to mimic the real shop website.</p>
+          <p>
+             The main page directs users to the first and second generation of our fridge product,
+             which is our first draft and the final design. The top navigation directs users to the
+             Smart Fridge App user guide and Smart Monitor user guide.
+          </p>
+          <p>The redirected pages illustrate the functionalities, specifications of each generation. 
+             Including a button to place an order, to mimic the real shop website.
+          </p>
         </div>
         <div class="website-video">
           <iframe 
@@ -187,6 +443,7 @@
         </div>
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>
