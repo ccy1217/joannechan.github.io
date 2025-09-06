@@ -1,3 +1,19 @@
+window.addEventListener('scroll', () => {
+  const footer = document.querySelector('.footer');
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  
+  if (window.scrollY >= scrollableHeight) {
+    footer.classList.add('show'); // show footer
+  } else {
+    footer.classList.remove('show'); // hide footer
+  }
+});
+
+
+
+
+
+
 const toggleBtn = document.getElementById('toggle-mode');
 const modeIcon = document.getElementById('mode-icon');
 
@@ -188,4 +204,3 @@ window.addEventListener("mousemove", (e) => {
   applyTransform();
 });
 
- 
