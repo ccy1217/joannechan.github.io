@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asteroid Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/chicken.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme2">
+     <!-- Top-left control buttons -->
+     <div class="top-controls">
+          <button id="menu-toggle">☰</button>
+          <button id="toggle-mode">
+          <img id="mode-icon" src="icons/moon.svg" alt="Toggle theme" />
+          </button>
+      </div>
+
+     <!-- Sidebar -->
+     <div class="sidebar">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#methodology">Methodology</a>
+          <a href="#key-features">Key features</a>
+          <div class="menu-item">
+             <button class="submenu-toggle">Pattern ▾</button>
+             <div class="submenu">
+                 <a href="#pattern-1">Pattern 1</a>
+                 <a href="#pattern-2">Pattern 2</a>
+             </div>
+          </div>
+     </div>
+
+     <!-- Main content -->
+     <div class="main-content">
+          <h1 class="fredericka-the-great-regular-title">Video game - asteroid game</h1>
+          <section id="overview">
+          	<h2 class="fredericka-the-great-regular">Overview</h2>
+          	<div class="wavy-line"></div>
+                <div class="video-container">
+         	    <iframe 
+              		src="https://www.youtube.com/embed/kPyTCQXucac"
+             		title="Video game"
+              		frameborder="0"
+              		allowfullscreen>
+          	    </iframe>
+                </div>
+                <p> This asteroid game is a classic space shooter where players pilot a spaceship through an
+                    asteroid field. Dodge and destroy incoming asteroids while trying to survive as long as 
+                    possible and rack up points. The game saves each player's record, and the leaderboard 
+                    highlights the top 10 players, adding a competitive edge and motivating players to beat 
+                    each other’s scores. With simple controls and arcade-style gameplay, it’s easy to pick up 
+                    and fun to replay.
+                </p>
+          </section>
+          <section id="methodology">
+          	<h2 class="fredericka-the-great-regular">Methdology</h2>
+          	<div class="wavy-line"></div>
+                	<div class="icon-row">
+                        	<div class="icon-box">
+                          		<img src="icons/unity.png" alt="unity" />
+                     		</div>
+                        	<div class="icon-box">
+                         		<img src="icons/github.png" alt="github" />
+                     		</div>
+                     		<div class="icon-box">
+                          		<img src="icons/c_sharp.svg" alt="c_sharp" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/json.webp" alt="json" />
+                     		</div>
+            		</div>
+           </section>
+          <section id="key-features">
+                <h2 class="fredericka-the-great-regular">Key Features</h2>
+                <div class="wavy-line"></div>
+                <ul>
+                    <li><strong>Scrolling background</strong> – immersive space environment that moves as
+                        you play.</li>
+                    <li><strong>Leaderboard (JSON-based)</strong> – records scores and showcases the top 
+                        10 players.</li>
+                    <li><strong>Asteroid splitting</strong> – large asteroids break into two smaller rocks
+                        when destroyed, increasing chaos and strategy.</li>
+                    <li><strong>Varied bullets</strong> – collect items to change your spaceship’s 
+                        projectile type.</li>
+                    <li><strong>Freeze timer</strong> – grab the timer item to freeze all asteroids 
+                        temporarily.</li>
+                    <li><strong>Diamond power-up</strong> – changes your bullets for a powerful advantage.</li>
+                    <li><strong>Coin bonus</strong> – collect coins to gain an extra life.</li>
+                    <li><strong>Blackhole trap</strong> – a dangerous item that reduces two lives if collected.</li>
+                    <li><strong>Polished player feedback</strong> – responsive sounds and animations that react to 
+                        gameplay events, making every hit and action more satisfying.</li>
+               </ul>
+          </section>
+
+           <section id="pattern-1">
+          	<h2 class="fredericka-the-great-regular">Pattern 1: Finite State Machine (FSM)</h2>
+          	<div class="wavy-line"></div>
+                <p>Feature Spaceship lifecycle control ( Alive -> Invulnerable -> Dead -> Game Over)</p>
+                <p>The spaceship transitions between states like:</p>
+                <li>Alive and active</li>
+                <li>Invulnerable after respawn</li>
+                <li>Destroyed and awaiting respawn</li>
+                <li>Game Over</li>
+          </section>
+           <section id="pattern-2">
+          	<h2 class="fredericka-the-great-regular">Pattern 2: Command Pattern</h2>
+          	<div class="wavy-line"></div><p></p>
+                <li>In the game, the Command Pattern is used to handle the spaceship’s bullet-firing 
+                   mechanism, which switches between a normal bullet and a special bullet based on 
+                   player interactions (when player collects a diamond).</li> <p></p>
+                <li>This pattern encapsulates requests (like “fire normal bullet” or “fire special bullet”)
+                   as objects, allowing them to be executed dynamically depending on the context.</li>
+          </section>
+     </div>
+     <script src="script.js"></script>
+</body>
+</html>
