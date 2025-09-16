@@ -1,9 +1,9 @@
-/*some spacing between point forms*/
+/*1. ======== some spacing between point forms ========*/ 
 li {
   margin-bottom: 8px;
 }
 
-/*1. profile */
+/*2. ======== profile ========*/
 .profile-container {
   display: flex;
   justify-content: center;
@@ -36,16 +36,19 @@ li {
   text-align: left;
 }
 
-/*2. wayv box */
+/*3. ======== wayv box ========*/
 .wavy-box {
   position: relative;
   width: 90%;
   max-width: 600px;
   margin: 50px auto;
-  padding: 40px 20px; /* space for waves */
-  
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  padding: 40px 20px;
+  border-radius: 10px;
   overflow: hidden;
+
+  /* stronger white shading */
+  background-color: rgba(255, 255, 255, 0.4); /* 0.4 = more opaque white */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* outer shadow */
 }
 
 /* Top and Bottom waves */
@@ -55,10 +58,10 @@ li {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 10px; /* thickness of wave */
+  height: 10px;
   background: repeating-linear-gradient(
       -45deg,
-      orange 0px, orangered 3px,
+      black 0px, grey 3px,
       transparent 3px, transparent 6px
   );
 }
@@ -66,15 +69,15 @@ li {
 .wavy-box::before { top: 0; }
 .wavy-box::after { bottom: 0; transform: rotate(180deg); }
 
-/* Left and Right waves - vertical gradients */
+/* Left and Right waves */
 .wavy-box .side-wave {
   position: absolute;
   top: 0;
-  width: 10px; /* thickness of wave */
+  width: 10px;
   height: 100%;
   background: repeating-linear-gradient(
-      135deg,       /* angle along height */
-      orange 0px, orangered 3px,
+      135deg,
+      black 0px, grey 3px,
       transparent 3px, transparent 6px
   );
 }
@@ -87,9 +90,11 @@ li {
   position: relative;
   z-index: 1;
   text-align: center;
+  color: #fff;
 }
 
-/*3. centralize video */
+
+/*4. ======== centralize video ========*/
 .video-container {
   display: flex;
   justify-content: center;
@@ -103,7 +108,7 @@ li {
   border-radius: 12px;
 }
 
-/*2. footer*/
+/*3. ======== footer ========*/
 .footer {
   width: 100%;
   padding: 20px 0;
@@ -159,7 +164,7 @@ body.dark-mode {
   color: #f1f7d7;
 }
 
-/* 3. Toggle & Menu Button Container */
+/* 5. ======== Toggle & Menu Button Container ========*/
 .top-controls {
   position: fixed;
   top: 20px;
@@ -230,7 +235,7 @@ body.dark-mode {
   }
 }
 
-/* 4. Vertical Sidebar Menu */
+/* 6. Vertical Sidebar Menu */
 .sidebar {
   height: 100vh;
   width: 200px;
@@ -317,7 +322,7 @@ body.dark-mode .sidebar {
 }
 
 
-/* 5. video section list */
+/* 7. video section list */
 /* adjust video size inside main content */
 .main-content iframe {
   width: 200px;
@@ -325,56 +330,64 @@ body.dark-mode .sidebar {
   border-radius: 10px;
 }
 
+/* Video Section Container */
 .video-section {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 15px;
+  margin-top: 20px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* item list */
+/* Individual Video Item */
 .video-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: flex-start; /* align videos left */
+  gap: 15px;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 20px;
+  padding: 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   color: #fff;
 }
 
 body.dark-mode .video-item {
   background-color: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   color: #222; 
 }
 
+/* Video Titles */
 .video-item h2 {
   flex: 1;
-  font-size: 22px;
+  font-size: 20px;
   text-align: left;
   margin: 0;
 }
 
+/* Video Iframes */
 .video-item iframe {
-  flex: 0.8;
-  max-width: 100%;
+  width: 300px;  /* slightly wider */
+  height: 180px; /* short height */
   border-radius: 10px;
+  flex: none;    /* remove flex override */
 }
 
+/* Shorts Video */
 .shorts-video {
-  width: 200px;
-  height: 356px;
+  width: 200px;  /* slightly wider */
+  height: 180px; /* short height */
   border-radius: 10px;
+  flex: none;
 }
 
 
-/* 6. Overview two-column layout */
+
+
+/* 8. Overview two-column layout */
 .overview-content {
   display: flex;
   flex-wrap: wrap;      /* stack on smaller screens */
@@ -400,12 +413,7 @@ body.dark-mode .video-item {
   border-radius: 10px;
 }
 
-
-
-
-
-
-/* Container for percent-style layout */
+/*9. ======== Container for percent-style layout ========*/
 .overview-percent {
   display: flex;
   justify-content: center;
@@ -442,28 +450,19 @@ body.dark-mode .video-item {
   line-height: 1;
 }
 
-
-
-
-/* 6. persona structure*/
+/* 10. ======== Persona structure ========*/
 /* Persona section layout */
 .persona {
   display: flex;
   justify-content: center; /* centers the images as a group */
   gap: 40px;               /* spacing between images */
-  align-items: center;
   padding-top: 40px;       /* add top padding */
 }
 
-
-.persona img:first-child {
-  width: 40%;   /* first image smaller */
-  max-width: 500px;
-}
-
-.persona img:last-child {
-  width: 55%;   /* second image larger */
-  max-width: 700px;
+.persona img {
+  width: 400px;    /* fixed width */
+  height: auto;    /* keep aspect ratio */
+  object-fit: contain; /* ensures the whole image fits */
 }
 
 @media (max-width: 768px) {
@@ -472,12 +471,14 @@ body.dark-mode .video-item {
     align-items: center;
   }
   .persona img {
-    width: 80%;
+    width: 80%;   /* responsive on smaller screens */
+    max-width: 400px;
   }
 }
 
-/* 7. For big photo, allow to zoom */
-/* ================= Gallery Container ================= */
+
+/* 11. ======== For big photo, allow to zoom ========*/
+/* Gallery Container */
 .gallery-container {
   max-width: 700px;
   margin: 50px auto;
@@ -485,7 +486,7 @@ body.dark-mode .video-item {
   padding: 20px;
 }
 
-/* ================= Slideshow ================= */
+/* Slideshow */
 .slide {
   display: none; /* hide all slides initially */
 }
@@ -501,7 +502,7 @@ body.dark-mode .video-item {
   opacity: 0.9;
 }
 
-/* ================= Arrows ================= */
+/* Arrows */
 .slideshow-container .prev,
 .slideshow-container .next {
   position: absolute;
@@ -527,7 +528,7 @@ body.dark-mode .video-item {
 .slideshow-container .prev { left: 15px; }
 .slideshow-container .next { right: 15px; }
 
-/* ================= Pagination ================= */
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -561,7 +562,7 @@ body.dark-mode .video-item {
   color: #fff;
 }
 
-/* ================= Lightbox Overlay ================= */
+/* Lightbox Overlay */
 .lightbox {
   display: none;
   position: fixed;
@@ -587,7 +588,7 @@ body.dark-mode .video-item {
 }
 
 
-/* ================= Zoom Controls ================= */
+/* Zoom Controls */
 /* Zoom controls should be clickable and above the image */
 .zoom-controls {
   position: absolute;   /* take out of normal flow */
@@ -609,7 +610,7 @@ body.dark-mode .video-item {
 }
 
 
-/* ================= Lightbox Arrows & Close ================= */
+/* Lightbox Arrows & Close */
 /* Close (cancel) button */
 .lightbox .close {
   position: absolute;
@@ -650,7 +651,7 @@ body.dark-mode .video-item {
 .lightbox .prev { left: 20px; }
 .lightbox .next { right: 20px; }
 
-/* 8.journey map*/
+/* 12.======== Journey map ========*/
 #journey-map-1 img {
   max-width: 900px; /* adjust the number to your desired size */
   width: 100%;      /* makes it responsive */
@@ -666,8 +667,7 @@ body.dark-mode .video-item {
   border-radius: 10px; /* optional: rounded corners */
 }
 
-
-/* 9. Two-column layout for website section */
+/* 13. ======== Two-column layout for website section ========*/
 .website-content {
   display: flex;
   flex-wrap: wrap; /* allows stacking on small screens */
@@ -692,7 +692,7 @@ body.dark-mode .video-item {
   border-radius: 10px;
 }
 
-/* 9. Two-column layout for text and images */
+/* 14. ======== Two-column layout for text and images ========*/
 .image-text-2-content {
   display: flex;            /* makes text and image side by side */
   flex-wrap: wrap;          /* allows stacking on small screens */
@@ -729,7 +729,7 @@ body.dark-mode .video-item {
   border-radius: 10px;
 }
 
-/*10. left- text, right -normal size image*/
+/*15. ========= left- text, right -normal size image ========*/
 .normal-half-img-container {
   width: 100%;             
   max-width: 600px;        
@@ -748,7 +748,7 @@ body.dark-mode .video-item {
   object-fit: contain;     /* scale image to fit container without cropping */
 }
 
-/* 11. left and right side document can scroll*/
+/* 16. ======== left and right side document can scroll =========*/
 .file-box {
   flex: 1;
   min-width: 300px;
@@ -765,10 +765,7 @@ body.dark-mode .video-item {
   border: none;
 }
 
-
-
-
-/* 11. wavy line*/
+/* 17. ======== Wavy line ========*/
 .wavy-line {
       position: relative;
       width: 100%;
@@ -781,7 +778,19 @@ body.dark-mode .video-item {
       z-index: 1; /* Ensure the wave is below the dropdown */
              }
 
-/*12. Special font type*/
+.wavy-line2 {
+      position: relative;
+      width: 100%;
+      height: 5px; /* Thickness of the wavy line */
+      background: repeating-linear-gradient(
+                -45deg,
+                 white 0px, grey 3px,
+                 transparent 3px, transparent 6px
+                 ); /* Creates a wavy effect */
+      z-index: 1; /* Ensure the wave is below the dropdown */
+             }
+
+/*18. ======== Special font type ========*/
 .sanchez-regular {
   font-family: "Sanchez", serif;
   font-weight: 400;
@@ -811,7 +820,14 @@ body.dark-mode .video-item {
   color:#e86100; /* this makes the text orange */
 }
 
-/*13. website font color*/
+.fredericka-the-great-regular-home {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  color:#FFFFFF; /* this makes the text orange */
+}
+/*19. ======== website font color =========*/
 /*word press*/
 .orange-link {
   color: #ff4500;   /* orange color */
@@ -822,7 +838,7 @@ body.dark-mode .video-item {
   text-decoration: underline; /* optional: underline on hover */
 }
 
-/*14. methodology icon box*/
+/*20. ======== methodology and school icon box ========*/
 .icon-row {
   display: flex;
   gap: 20px ; /* spacing between squares */
@@ -844,6 +860,127 @@ body.dark-mode .video-item {
   max-width: 90%;   /* scale inside square */
   max-height: 90%;
   object-fit: contain;
+}
+
+.uni-container {
+  width: 100%;          /* full width so long names wrap nicely */
+  display: flex;
+  justify-content: center;  /* center the icon + name */
+  margin-bottom: 30px;      /* space between each university */
+}
+
+.uni-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;        /* optional max width to control wrapping */
+}
+
+.uni-icon-box {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.uni-icon-box img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.uni-icon-box:hover {
+  transform: scale(1.05);
+}
+
+.uni-name {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  word-wrap: break-word;    /* ensures really long names wrap correctly */
+}
+
+
+/*21. ========= wavy box (black and white) ========*/
+.wavy-box2 {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+
+  /* Increase padding for spacing inside the box */
+  padding: 50px 30px; /* top/bottom 50px, left/right 30px */
+
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent shading */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Top and Bottom Waves */
+.wavy-box2::before,
+.wavy-box2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10px; /* thickness of wave */
+  background: repeating-linear-gradient(
+      -45deg,
+      white 0px, grey 3px,
+      transparent 3px, transparent 6px
+  );
+}
+
+.wavy-box2::before { top: 0; }
+.wavy-box2::after { bottom: 0; transform: rotate(180deg); }
+
+/* Left and Right Waves */
+.wavy-box2 .side-wave {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(
+      135deg,
+      white 0px, grey 3px,
+      transparent 3px, transparent 6px
+  );
+}
+
+.wavy-box2 .side-wave.left { left: 0; }
+.wavy-box2 .side-wave.right { right: 0; }
+
+/* Video section inside the box */
+.wavy-box2 .video-section {
+  position: relative;
+  z-index: 1;
+
+  /* Add spacing between video items and box edges */
+  padding: 15px; 
+}
+
+.wavy-box2 p {
+  font-size: 20px;      /* increase text size */
+  line-height: 1.8;     /* spacing between lines */
+  color: #fff;
+  margin-top: 15px;     /* spacing from heading */
+  
+  /* Extra spacing from box edges */
+  padding: 20px;        /* adds space inside around the paragraph */
+  border-radius: 8px;   /* optional rounded corners for the paragraph */
+}
+
+.wavy-box2 h2 {
+   padding-left: 20px;
 }
 
 
