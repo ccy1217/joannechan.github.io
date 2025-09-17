@@ -4,36 +4,23 @@ li {
 }
 
 /*2. ======== profile ========*/
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;        /* spacing between columns */
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 20px;
+/* make profile section column centered */
+.profile-container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* centers the image horizontally */
+    text-align: center;   /* centers the name */
+    gap: 20px;            /* space between image and name */
 }
 
-/* Each column styling */
-.profile-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Profile image */
+/* profile image */
 .profile-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* Profile description text */
-.profile-description {
-  text-align: left;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /*3. ======== wayv box ========*/
@@ -345,13 +332,20 @@ body.dark-mode .sidebar {
 .video-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* align videos left */
+  justify-content: space-between; /* push video all the way right */
   gap: 15px;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 12px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   color: #fff;
+}
+
+.video-text {
+  display: flex;
+  flex-direction: column; /* title on top, button below */
+  align-items: flex-start; /* keep left aligned */
+  gap: 10px;
 }
 
 body.dark-mode .video-item {
@@ -376,6 +370,7 @@ body.dark-mode .video-item {
   flex: none;    /* remove flex override */
 }
 
+
 /* Shorts Video */
 .shorts-video {
   width: 200px;  /* slightly wider */
@@ -384,6 +379,16 @@ body.dark-mode .video-item {
   flex: none;
 }
 
+.github-btn img {
+  width: 100px;     /* bigger size */
+  height: auto;     /* keep natural aspect ratio */
+  padding-left: 20px; /* space on the left */
+  transition: transform 0.3s ease;
+}
+
+.github-btn img:hover {
+  transform: scale(1.1); /* subtle hover effect */
+}
 
 
 
@@ -811,7 +816,6 @@ body.dark-mode .video-item {
  text-align: center;
 }
 
-
 .fredericka-the-great-regular {
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
@@ -826,6 +830,19 @@ body.dark-mode .video-item {
   font-style: normal;
   font-size: 35px;
   color:#FFFFFF; /* this makes the text orange */
+}
+
+.fredericka-the-great-regular-home-main {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 500; /* bold */
+  font-style: normal;
+  font-size: 55px;
+
+  /* Gradient text */
+  background: linear-gradient(90deg, #EEE8AA, #DCDCDC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ text-align: center;
 }
 /*19. ======== website font color =========*/
 /*word press*/
