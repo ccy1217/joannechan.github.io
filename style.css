@@ -95,61 +95,47 @@ li {
   border-radius: 12px;
 }
 
-/*3. ======== footer ========*/
-.footer {
-  width: 100%;
-  padding: 20px 0;
-  background-color: #f8f8f8;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
 
-.footer.show {
-  transform: translateY(0);
-}
+
 
 /* 4. Default Light Theme */
 body.theme1 {
   color: #222;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px 100px;
 
-  background-image: url("home-background.gif");
+
+  background: linear-gradient(to right, #222, #555);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-padding-bottom: 220px;
+
 }
 
 body.theme2 {
   color: #222;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px 100px;
-  background-color: #DCDFBF; /* fallback */
+
+  /* Modern white-to-dark-grey gradient: top to bottom */
+  background: linear-gradient(to bottom, #a8a8a8 0%, #d4d4d4 40%, #ffffff 100%);
+
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-padding-bottom: 220px;
 }
 html {
   cursor: url('chicken-click.png'), default;
 }
 
-/* Dark Mode */
 body.dark-mode {
-  background-color: #444d1d;
-  color: #f1f7d7;
+  background: linear-gradient(to bottom, #001a33 0%, #2a2f4d 50%, #424242 100%);
+  color: #f1f7d7; /* light text for contrast */
 }
+
+
 
 /* 5. ======== Toggle & Menu Button Container ========*/
 .top-controls {
@@ -347,6 +333,18 @@ body.dark-mode .sidebar {
   align-items: flex-start; /* keep left aligned */
   gap: 10px;
 }
+
+.video-item h2 a.video-link {
+    color: navy;       /* navy color */
+    font-size: 24px;   /* make text larger */
+    text-decoration: underline; /* keep underline */
+}
+
+.video-item h2 a.video-link:hover {
+    color: #000080;    /* slightly darker navy on hover */
+}
+
+
 
 body.dark-mode .video-item {
   background-color: rgba(255, 255, 255, 0.78);
@@ -844,6 +842,22 @@ body.dark-mode .video-item {
   -webkit-text-fill-color: transparent;
  text-align: center;
 }
+
+.fredericka-the-great-regular-footer {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 500; /* bold */
+  font-style: normal;
+  font-size: 55px;
+
+  /* Gradient text */
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ text-align: center;
+}
+
+
+
 /*19. ======== website font color =========*/
 /*word press*/
 .orange-link {
@@ -998,6 +1012,128 @@ body.dark-mode .video-item {
 
 .wavy-box2 h2 {
    padding-left: 20px;
+}
+
+/* Footer wrapper */
+
+.footer {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 50px;   /* space above icons */
+  padding-bottom: 50px; /* space for waves to show */
+}
+
+/* Footer content container */
+.footer-content {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 20px 0;  /* only top/bottom padding */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Icons in a horizontal row */
+.footer-icons {
+  display: flex;
+  justify-content: center; /* keeps them centered */
+  gap: 40px; /* spacing between icons */
+  margin-bottom: 20px;
+  width: 100%; /* span full width */
+}
+
+.footer-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Divider */
+.footer-divider {
+  width: calc(100% - 600px); /* 80px on each side */
+  border: none;
+  border-top: 1px solid black;
+  margin: 20px 80px; /* top/bottom 20px, left/right 80px */
+}
+
+
+/* Footer text */
+.footer p {
+  margin: 0;
+  padding-bottom: 5px;
+  color: black;
+}
+
+
+/* Waves */
+.footer .waves-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;      /* stretch with footer */
+  overflow: hidden;
+  z-index: 0;        /* behind content */
+}
+
+.footer .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;      /* cover full footer height */
+  background: url("wave23.png");
+  background-size: 1000px 100%;
+}
+
+
+.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 1;
+  opacity: 1;
+  bottom: 0;
+}
+
+.wave2 {
+  animation: animate2 15s linear infinite;
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 10px;
+}
+
+.wave3 {
+  animation: animate 30s linear infinite;
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 15px;
+}
+
+.wave4 {
+  animation: animate2 10s linear infinite;
+  z-index: 1;
+  opacity: 0.3;
+  bottom: 20px;
+}
+
+@keyframes animate {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1000px; }
+}
+
+@keyframes animate2 {
+  0% { background-position-x: 0; }
+  100% { background-position-x: -1000px; }
 }
 
 
