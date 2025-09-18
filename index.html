@@ -19,12 +19,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
   <title>Chung Yan Chan</title>
   <link rel="icon" href="icons/chicken.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="theme1">
+<body class="theme2">
+          <!-- Top-left control buttons -->
+     <div class="top-controls">
+          <button id="toggle-mode">
+          <img id="mode-icon" src="icons/moon.svg" alt="Toggle theme" />
+          </button>
+      </div>
 
    <div class="wavy-box2">
         <div class="side-wave left"></div>
@@ -78,16 +85,31 @@
    </div>
 
 
-<div class="wavy-box2">
+   <div class="wavy-box2">
      <div class="side-wave left"></div>
      <div class="side-wave right"></div>
      <h2 class="fredericka-the-great-regular-home">My project collection</h2>
      <div class="wavy-line2"></div>
 
       <div class="video-section">
+        
         <div class="video-item">
-          <h2><a href="childminder-web.html" class="video-link">On-demand childminder service web applicatrion</a></h2>
-          <iframe src="https://www.youtube.com/embed/QWdHYyBe1Js"
+          <h2><a href="smart-fridge.html" class="video-link">UX design for smart fridge</a></h2>
+          <iframe class="shorts-video"
+                  src="https://www.youtube.com/embed/_UIwaJ7dU84"
+                  title="YouTube Shorts"
+                  frameborder="0"
+                  allowfullscreen></iframe>
+        </div>
+
+        <div class="video-item">
+          <div class="video-text">
+             <h2><a href="childminder-web.html" class="video-link">On-demand childminder service web applicatrion</a></h2>
+             <a href="https://github.com/ccy1217/childminder--web-app" target="_blank" class="github-btn">
+                 <img src="icons/github-button.webp" alt="GitHub Link">
+            </a>
+          </div>
+             <iframe src="https://www.youtube.com/embed/QWdHYyBe1Js"
                   title="Childminder"
                   frameborder="0"
                   allowfullscreen></iframe>
@@ -95,9 +117,7 @@
 
         <div class="video-item">
           <div class="video-text">
-            <h2>
-              <a href="mobile-app.html" class="video-link">Mobile app</a>
-            </h2>
+            <h2><a href="mobile-app.html" class="video-link">Mobile app</a></h2>
             <a href="https://github.com/ccy1217/mobile-app" target="_blank" class="github-btn">
               <img src="icons/github-button.webp" alt="GitHub Link">
             </a>
@@ -121,20 +141,34 @@
                   allowfullscreen></iframe>
         </div>
 
-        <div class="video-item">
-          <h2><a href="smart-fridge.html" class="video-link">UX design for smart fridge</a></h2>
-          <iframe class="shorts-video"
-                  src="https://www.youtube.com/embed/_UIwaJ7dU84"
-                  title="YouTube Shorts"
-                  frameborder="0"
-                  allowfullscreen></iframe>
-        </div>
       </div>
     </div>
-
-    <div class="footer">
-         Chung Yan Chan. © 2025
+<footer class="footer">
+  <div class="footer-content">
+    <h2 class="fredericka-the-great-regular-footer">CHUNG YAN CHAN</h2>
+    <div class="footer-icons">
+      <a href="https://github.com/ccy1217" target="_blank">
+        <img src="icons/github-button2.jpg" alt="GitHub">
+      </a>
+      <a href="mailto:chungyan02@gmail.com">
+        <img src="icons/email.jpg" alt="Email">
+      </a>
+      <a href="https://www.linkedin.com/in/joanne-chan-732593272" target="_blank">
+        <img src="icons/linkin.webp" alt="LinkedIn">
+      </a>
     </div>
+    <hr class="footer-divider">
+    <p>Chung Yan Chan. © 2025</p>
+  </div>
+
+  <div class="waves-wrapper">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+  </div>
+</footer>
+
 
   </div>
   <script src="script.js"></script>
