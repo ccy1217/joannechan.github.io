@@ -315,16 +315,27 @@ body.dark-mode .sidebar {
 }
 
 /* Individual Video Item */
+/* Light mode video box (light background, dark text) */
 .video-item {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* push video all the way right */
+  justify-content: space-between;
   gap: 15px;
-  background-color: rgba(0, 0, 0, 0.3);
+
+  background-color: rgba(255, 255, 255, 0.78); /* Light background */
   padding: 12px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  color: #fff;
+  color: #222; /* Dark text */
+  border: 2px solid transparent; /* no border in light mode */
+}
+
+/* Dark mode video box (dark background, white text + white edge) */
+body.dark-mode .video-item {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  color: #fff;  /* White text */
+  border: 2px solid #fff; /* White edge */
 }
 
 .video-text {
@@ -334,22 +345,27 @@ body.dark-mode .sidebar {
   gap: 10px;
 }
 
-.video-item h2 a.video-link {
-    color: navy;       /* navy color */
-    font-size: 24px;   /* make text larger */
-    text-decoration: underline; /* keep underline */
+/* Light mode link styles */
+.video-item h2 a.video-link,
+.video-item h2 a.video-link:visited {
+  color: navy;       /* stays navy even after click */
+  font-size: 24px;
+  text-decoration: underline;
 }
 
 .video-item h2 a.video-link:hover {
-    color: #000080;    /* slightly darker navy on hover */
+  color: #000080;    /* slightly darker navy on hover */
 }
 
+/* Dark mode link styles */
+body.dark-mode .video-item h2 a.video-link,
+body.dark-mode .video-item h2 a.video-link:visited {
+  color: #fff;       /* white in dark mode */
+  text-decoration: underline;
+}
 
-
-body.dark-mode .video-item {
-  background-color: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  color: #222; 
+body.dark-mode .video-item h2 a.video-link:hover {
+  color: #ddd;       /* softer white on hover */
 }
 
 /* Video Titles */
@@ -368,7 +384,6 @@ body.dark-mode .video-item {
   flex: none;    /* remove flex override */
 }
 
-
 /* Shorts Video */
 .shorts-video {
   width: 200px;  /* slightly wider */
@@ -377,6 +392,7 @@ body.dark-mode .video-item {
   flex: none;
 }
 
+/* GitHub button */
 .github-btn img {
   width: 100px;     /* bigger size */
   height: auto;     /* keep natural aspect ratio */
@@ -1135,5 +1151,5 @@ body.dark-mode .video-item {
   0% { background-position-x: 0; }
   100% { background-position-x: -1000px; }
 }
- 
+
 
