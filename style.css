@@ -893,9 +893,13 @@ body.dark-mode .video-item h2 a.video-link:hover {
 /*20. ======== methodology and school icon box ========*/
 .icon-row {
   display: flex;
-  gap: 20px ; /* spacing between squares */
+  gap: 40px;
   margin-top: 30px;
+  justify-content: center;
+  align-items: flex-start;  /* align from top */
+  flex-wrap: wrap;
 }
+
 
 .icon-box {
   width: 100px;   /* square size */
@@ -922,13 +926,32 @@ body.dark-mode .video-item h2 a.video-link:hover {
 }
 
 .uni-icon-wrapper {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 400px;        /* optional max width to control wrapping */
+  padding: 10px;
 }
 
+/* Course name (equalized height) */
+.uni-course {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;   /* since your background is dark */
+  line-height: 1.3;
+
+  height: 60px;           /* fixed equal height for all */
+  display: flex;
+  align-items: center;    /* vertically center text */
+  justify-content: center;
+  text-align: center;
+}
+
+/* University icon box */
 .uni-icon-box {
   width: 200px;
   height: 200px;
@@ -939,11 +962,12 @@ body.dark-mode .video-item h2 a.video-link:hover {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  margin-bottom: 12px;
 }
 
 .uni-icon-box img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
 }
 
@@ -951,14 +975,14 @@ body.dark-mode .video-item h2 a.video-link:hover {
   transform: scale(1.05);
 }
 
+/* University name (longer text allowed) */
 .uni-name {
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-  word-wrap: break-word;    /* ensures really long names wrap correctly */
+  font-size: 16px;
+  font-weight: 400;
+  color: #ddd;     /* light for dark background */
+  line-height: 1.4;
+  max-width: 280px;
 }
-
 
 /*21. ========= wavy box (black and white) ========*/
 .wavy-box2 {
@@ -1155,6 +1179,16 @@ body.dark-mode .video-item h2 a.video-link:hover {
 @keyframes animate2 {
   0% { background-position-x: 0; }
   100% { background-position-x: -1000px; }
+}
+
+/* Resize the user-cases image with top padding */
+.User.cases img.zoomable {
+  max-width: 100%;      /* scales down to fit container */
+  height: auto;         /* maintain aspect ratio */
+  max-height: 500px;    /* limit vertical size */
+  border-radius: 10px;  /* optional rounding */
+  display: block;       /* remove inline spacing */
+  margin: 20px auto 0;  /* top padding 20px, center horizontally */
 }
 
 
