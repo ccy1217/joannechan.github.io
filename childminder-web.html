@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>On-demand childminder service web application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="icons/chicken.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme1">
+     <!-- Top-left control buttons -->
+     <div class="top-controls">
+          <button id="menu-toggle">☰</button>
+          <button id="toggle-mode">
+          <img id="mode-icon" src="icons/moon.svg" alt="Toggle theme" />
+          </button>
+      </div>
+
+     <!-- Sidebar -->
+     <div class="sidebar">
+          <a href="index.html">Home</a>
+          <a href="#objectives">Objectives</a>
+          <a href="#what-is-childminder">What is childminder?</a>
+          <a href="#architecture">Architecture</a>
+          <div class="menu-item">
+             <button class="submenu-toggle">Module Design ▾</button>
+             <div class="submenu">
+                 <a href="#user-cases">User cases</a>
+                 <a href="#module-relation-&-data schema">Module relation & data schema</a>
+             </div>
+          </div>
+          <a href="#methodology">Metholdology</a>
+          <a href="#key-features">Key features</a>
+     </div>
+
+     <!-- Main content -->
+     <div class="main-content">
+     <div class="main-content-inner">
+          <h1 class="fredericka-the-great-regular-title">On-demand childminder service web application </h1>
+          <section id="what-is-childminder">
+          	<h2 class="fredericka-the-great-regular">What is childminder?</h2>
+          	<div class="wavy-line"></div>
+                <li>Cares for children in their own home for 3+ hours/day</li>
+                <li>Must register if caring for under-8s for 2+ paid hours/day</li>
+                <li>Gets a Unique Reference Number (URN) for Ofsted checks</li>
+                <li>Must meet health and safety standards or face penalties</li>
+                <li>Offers flexible care: part-time, full-time, or after-school</li> 
+          </section>
+          <section id="architecture">
+          	<h2 class="fredericka-the-great-regular">Architecture</h2>
+          	<div class="wavy-line"></div><p></p>
+                <img id="software1" src="childminder/software-architechure-diagram.png" alt="Software Architechure Diagram" class="zoomable/>
+          </section>
+          <section id="module-relation-&-data schema">
+          	<h2 class="fredericka-the-great-regular">Module relation & data schema</h2>
+          	<div class="wavy-line"></div>
+                <div class="persona">
+                <div><p><strong>Module relation diagram</strong></p> 
+                <img src="childminder/relationship.png" alt="Relationship" class="zoomable" /></div>
+                <div><p><strong>DBeaver Diagram</strong></p>
+                <img src="childminder/dbeaver-database.png" alt="Dbeaver-database" class="zoomable"/></div>
+                </div>
+          </section>
+          <section id="methdology">
+          	<h2 class="fredericka-the-great-regular">Methdology</h2>
+          	<div class="wavy-line"></div>
+                	<div class="icon-row">
+                        	<div class="icon-box">
+                          		<img src="icons/laravel.png" alt="laravel" />
+                     		</div>
+                        	<div class="icon-box">
+                         		<img src="icons/docker.png" alt="docker" />
+                     		</div>
+                     		<div class="icon-box">
+                          		<img src="icons/dbeaver.png" alt="dbeaver" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/livewire.avif" alt="livewire" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/github.png" alt="github" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/google-recaptcha.webp" alt="google-trecaptcha" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/leaflet.webp" alt="leaflet" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/open-route-service.jpg" alt="Open route service" />
+                     		</div>
+            		</div>
+                        <div class="icon-row">
+                                <div class="icon-box">
+                          		<img src="icons/nordvpn.png" alt="nordvpn" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/ngrok.webp" alt="ngrok" />
+                     		</div>
+                                <div class="icon-box">
+                          		<img src="icons/postcode-api.png" alt="postcode-api" />
+                     		</div>
+                        </div>
+           </section>
+           <section id="pattern-1">
+          	<h2 class="fredericka-the-great-regular">Key features</h2>
+          	<div class="wavy-line"></div>
+                <li>Hosting with Ngrok</li>
+                <li>Search & filter function</li>
+                <li>Mapping function</li>
+                <li>Booking system</li>
+                <li>Commenting & rating</li> 
+                <li>Advirtisement</li>
+          </section>
+          <div id="lightbox" class="lightbox">
+                <span class="close">&times;</span>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                <img class="lightbox-content" id="lightbox-img" />
+                <div class="zoom-controls">
+                    <button id="zoom-in">+</button>
+                    <button id="zoom-out">-</button>
+                </div>
+          </div>
+     </div>
+     </div>
+     <script src="script.js"></script>
+</body>
+<footer style="text-align:center; padding:20px; font-size:0.9em; color:#aaa;">
+  © 2025 Chung Yan Chan · <a href="mailto:chungyan02@gmail.com" style="color:#aaa;">chungyan02@gmail.com</a>
+</footer>
+</html>
