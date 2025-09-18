@@ -135,6 +135,11 @@ body.dark-mode {
   color: #f1f7d7; /* light text for contrast */
 }
 
+.main-content-inner {
+  padding-left: 50px; /* your desired left padding */
+  /* optionally add padding-right for balance */
+  padding-right: 50px;
+}
 
 
 /* 5. ======== Toggle & Menu Button Container ========*/
